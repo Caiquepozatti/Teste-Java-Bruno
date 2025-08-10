@@ -12,6 +12,17 @@ spring:
         format_sql: true
     open-in-view: false
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: when_authorized
+
 logging:
   level:
     org.hibernate.SQL: info
